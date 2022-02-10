@@ -3,9 +3,9 @@ import { Footer, Navbar, Services, Transactions, Welcome } from "./components";
 import { TransactionContext } from "./context/TransactionContext";
 
 export default function App() {
-	const { checkIfWalletConnected } = useContext(TransactionContext);
+	const { checkIfWalletConnected, getAllTransactions } = useContext(TransactionContext);
 
-	useEffect(() => { checkIfWalletConnected() }, [])
+	useEffect(() => { checkIfWalletConnected(); getAllTransactions() }, [])
 
 	return (
 		<div className="min-h-screen">
